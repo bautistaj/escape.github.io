@@ -121,10 +121,10 @@ var PlayGame = {
 
 
       //text score
-      this.scoreText = game.add.text(100, 40, 'Starts: 0', style);
+      this.scoreText = game.add.text(100, 40, 'Stars: 0', style);
       this.scoreText.anchor.setTo(0.5);
 
-      this.liveText = game.add.text(1035, 40, 'Live: 100', style);
+      this.liveText = game.add.text(1035, 40, 'Life: 100', style);
       this.liveText.anchor.setTo(0.5);
 
       //sounds
@@ -250,7 +250,7 @@ var PlayGame = {
       return true;
     },
     increaseScore: function(){
-      this.scoreText.text =  'Starts: '+this.startCaugth;
+      this.scoreText.text =  'Stars: '+this.startCaugth;
       if(this.startCaugth < 100)
         this.startCaugth+=10;
       else
@@ -259,7 +259,7 @@ var PlayGame = {
     removeLive: function(){
       if(this.grinchLive > 5){
         this.grinchLive-=5;
-        this.liveText.text =  'Live: '+this.grinchLive;
+        this.liveText.text =  'Life: '+this.grinchLive;
       }else{
         this.gameOver("GAME OVER");
       }
