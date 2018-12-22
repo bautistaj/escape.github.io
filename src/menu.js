@@ -1,3 +1,9 @@
+var style = {
+  font: 'bold 30pt Arial',
+  fill: '#000000',
+  align: 'center'
+}
+
 var Menu = {
     init: function(){
       game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -13,10 +19,13 @@ var Menu = {
       this.add.button(game.width/2, game.height/2,
         'background_init').anchor.setTo(0.5);
 
-        var button = this.add.button(game.width/2, 450,
+        var button = this.add.button(game.width/2, 500,
           'button', this.startGame, this);
 
         button.anchor.setTo(0.5);
+
+        this.textInstructions =  game.add.text(game.width/2, 410, "Help the Grinch escape, collect stars and avoid trees", style);
+        this.textInstructions.anchor.setTo(0.5);
     },
     startGame: function(){
         this.state.start('PlayGame');

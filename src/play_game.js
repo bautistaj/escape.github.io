@@ -3,13 +3,13 @@ var AMOUNT_STAR = 10;
 
 var style = {
   font: 'bold 30pt Arial',
-  fill: '#000000',
+  fill: '#59c14f',
   align: 'center'
 }
 
 var styleMap = {
   font: 'bold 60pt Arial',
-  fill: '#FFFFFF',
+  fill: '#59c14f',
   align: 'center'
 };
 
