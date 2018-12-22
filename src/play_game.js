@@ -32,6 +32,8 @@ var PlayGame = {
         game.load.spritesheet("explosion2","assets/images/explosion2.png",81, 84, 4);
         game.load.image('button', 'assets/images/btn.png');
         game.load.audio('oedipus', ['assets/sounds/oedipus.mp3']);
+        game.load.audio('sfxPop', ['assets/sounds/sfxPop.mp3']);
+        game.load.audio('explosion', ['assets/sounds/explosion.mp3']);
     },
 
     create: function(){
@@ -128,6 +130,10 @@ var PlayGame = {
       //sounds
 
       this.music = game.add.audio('oedipus');
+
+      this.explosion = game.add.audio('explosion');
+      this.sfxPop = game.add.audio('sfxPop');
+
       this.music.play();
     },
     update: function(){
@@ -198,7 +204,7 @@ var PlayGame = {
 
           if( this.isSpriteOverlapping(boundGrinch, boundTree) ) {
             this.removeLive();
-
+            this.explosion.play(); 
             var explosion = this.explosionGroup2.getFirstDead();
             if(explosion != null){
               explosion.reset(this.treeArray[i].x, this.treeArray[i].y);
