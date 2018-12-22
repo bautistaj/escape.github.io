@@ -179,7 +179,7 @@ var PlayGame = {
 
           if( this.starArray[i].visible && this.isSpriteOverlapping(boundGrinch, boundStar) ) {
             this.increaseScore();
-
+            this.sfxPop.play();
             var explosion = this.explosionGroup.getFirstDead();
             if(explosion != null){
               explosion.reset(this.starArray[i].x, this.starArray[i].y);
@@ -204,7 +204,7 @@ var PlayGame = {
 
           if( this.isSpriteOverlapping(boundGrinch, boundTree) ) {
             this.removeLive();
-            this.explosion.play(); 
+            this.explosion.play();
             var explosion = this.explosionGroup2.getFirstDead();
             if(explosion != null){
               explosion.reset(this.treeArray[i].x, this.treeArray[i].y);
